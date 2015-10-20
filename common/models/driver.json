@@ -1,0 +1,42 @@
+{
+  "name": "Driver",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "photo": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "transportationProvider": {
+      "type": "belongsTo",
+      "model": "TransportProvider",
+      "foreignKey": "transportation_provider_id"
+    },
+    "tripRequests": {
+      "type": "hasMany",
+      "model": "TripRequest",
+      "foreignKey": "driver_id"
+    },
+    "vehicles": {
+      "type": "hasOne",
+      "model": "Vehicle",
+      "foreignKey": "driver_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,29 @@
+{
+  "name": "TransportationProvider",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "drivers": {
+      "type": "hasMany",
+      "model": "Driver",
+      "foreignKey": "transportation_provider_id"
+    },
+    "vehicles": {
+      "type": "hasMany",
+      "model": "Vehicle",
+      "foreignKey": "transportation_provider_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

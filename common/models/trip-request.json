@@ -1,0 +1,46 @@
+{
+  "name": "TripRequest",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "pickup_dt": {
+      "type": "date",
+      "required": true
+    },
+    "pickup_geo": {
+      "type": "geopoint",
+      "required": true
+    },
+    "dropoff_geo": {
+      "type": "geopoint",
+      "required": true
+    },
+    "cost": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "driver": {
+      "type": "belongsTo",
+      "model": "Driver",
+      "foreignKey": "driver_id"
+    },
+    "vehicle": {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id"
+    },
+    "passenger": {
+      "type": "belongsTo",
+      "model": "Passenger",
+      "foreignKey": "passenger_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

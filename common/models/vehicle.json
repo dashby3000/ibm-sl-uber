@@ -1,0 +1,33 @@
+{
+  "name": "Vehicle",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "make": {
+      "type": "string",
+      "required": true
+    },
+    "license_plate": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "transportationProvider": {
+      "type": "belongsTo",
+      "model": "TransportProvider",
+      "foreignKey": "transport_provider_id"
+    },
+    "driver": {
+      "type": "belongsTo",
+      "model": "Driver",
+      "foreignKey": "driver_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
